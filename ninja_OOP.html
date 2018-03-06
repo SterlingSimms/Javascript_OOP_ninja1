@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja</title>
+</head>
+<body>
+    <script>
+        function Ninja(name, health=100){
+            let speed = 3;
+            let strength = 3;
+            this.name = name;
+            this.health = health;
+        
+        Ninja.prototype.sayName = function() {
+            console.log(this.name)
+        }
+        this.showSpeed = function() {
+            return speed;
+        }
+        this.showStrength = function() {
+            return strength;
+        } 
+        Ninja.prototype.showStats = function() {
+            console.log(this.health, this.showSpeed(), this.showStrength());
+        }
+        Ninja.prototype.drinkSake = function() {
+            this.health += 10;
+            console.log(this.health);
+            return this;
+        }
+        }
+        const ninja1 = new Ninja("Sterling", 100);
+        ninja1.sayName();
+        ninja1.drinkSake().drinkSake();
+        ninja1.showStats()
+    </script>
+</body>
+</html>
